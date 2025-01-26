@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from .models import PostList
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)  # Ensure password is write-only
@@ -22,3 +23,10 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+    
+class PostListSerializer(serializers.ModelSerializer):
+    datePublished = serializers.DateTimeField(format='%d-%m-%Y %H:%M')
+    
+    class Meta:
+        model = PostList
+        fields = ['id','category', 'title', 'subtitle', 'datePublished', 'dateUpdated', 'auth', 'body', 'image', 'alt', 'section', 'order']
