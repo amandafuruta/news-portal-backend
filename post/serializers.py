@@ -31,3 +31,11 @@ class PostListSerializer(serializers.ModelSerializer):
         model = PostList
         fields = ['id','category', 'title', 'subtitle', 'datePublished', 'dateUpdated', 'auth', 'body', 'image', 'alt', 'section', 'order']
     
+    def update(self, instance, validated_data):
+        # Handle image field in case it's not provided in the request
+        image = validated_data.get('image', None)
+        if not image:
+            validated_data.pop('image', None)
+
+        # Update the instance with other fields
+        return super().update(instance, validated_data)
