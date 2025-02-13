@@ -14,4 +14,6 @@ This is the backend for the News Portal. It provides functionality for managing 
   - Allows admins to perform CRUD operations on news posts (Create, Read, Update, Delete).
   - Regular users can only view the posts.
 
-- **Frontend**: You can check [here](https://github.com/amandafuruta/news-portal-frontend) 
+- **Frontend**: You can check [here](https://github.com/amandafuruta/news-portal-frontend)
+
+  Feb/2025
